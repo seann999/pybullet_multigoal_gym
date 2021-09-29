@@ -129,6 +129,11 @@ class Kuka(URDFBasedRobot):
         if self.joint_control:
             self.joint_state_target = (a[:7] * 0.05) + self.joint_state_target
             joint_poses = self.joint_state_target.copy()
+        elif len(a) == 7:
+            joint_poses = self.compute_ik(bullet_client=bullet_client,
+                                          target_ee_pos=a[:3],
+                                          target_ee_quat=np.array([0, -1, 0, 0]),
+                                          )
         else:
             # actions alter the ee target pose
             self.end_effector_target += (a[:3] * 0.05)

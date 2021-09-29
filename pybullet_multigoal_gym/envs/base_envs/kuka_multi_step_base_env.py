@@ -383,7 +383,7 @@ class KukaBulletMultiBlockEnv(BaseBulletMGEnv):
         achieved_goal = np.concatenate(achieved_goal)
 
         self._generate_goal(block_poses=block_xyzs, new_target=False)
-        self.set_sub_goal(sub_goal_ind=self.sub_goal_ind)
+        # self.set_sub_goal(sub_goal_ind=self.sub_goal_ind)
 
         assert achieved_goal.shape == self.desired_goal.shape
 

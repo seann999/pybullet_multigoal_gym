@@ -159,7 +159,7 @@ class BaseBulletMGEnv(gym.Env):
             self.ownsPhysicsClient = True
             if self.isRender:
                 self._p = bullet_client.BulletClient(connection_mode=pybullet.GUI)
-                self._p.configureDebugVisualizer(pybullet.COV_ENABLE_GUI, 0, lightPosition=[0.0, 0.0, 4])
+                # self._p.configureDebugVisualizer(pybullet.COV_ENABLE_GUI, 0, lightPosition=[0.0, 0.0, 4])
                 self._p.resetDebugVisualizerCamera(self._debug_cam_dist,
                                                    self._debug_cam_yaw - 30,
                                                    self._debug_cam_pitch+10, [0, 0, 0.3])
